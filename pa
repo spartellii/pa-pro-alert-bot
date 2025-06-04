@@ -1,0 +1,16 @@
+import time
+import requests
+
+# Telegram bilgilerin
+TOKEN = '6626031530:AAHhvj7BavjILZV9O4n3MKW3EMfVEoNMMf8'
+CHAT_ID = '5239279466'
+
+def send_message(message):
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
+    data = {'chat_id': CHAT_ID, 'text': message}
+    requests.post(url, data=data)
+
+# Test mesajı gönderme döngüsü
+while True:
+    send_message("✅ Bot Render'da çalışıyor! (Hyper Scalper takipte)")
+    time.sleep(3600)  # 1 saatte bir mesaj gönderir (test için)
